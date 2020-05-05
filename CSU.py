@@ -4,18 +4,16 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import requests
 import time
 import notify
 
 
 def check_in():
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome('/usr/local/bin/chromedriver')
     driver.get('https://wxxy.csu.edu.cn/ncov/wap/default/index')
-    print(driver.title)
     #读取账户密码
-
-    with open('../AccountInfo/csu.txt', 'r') as f:
+    #用绝对路径了
+    with open('/Users/tanwenbo/PycharmProjects/Daily-Check-in/AccountInfo/csu.txt', 'r') as f:
         lines = f.readlines()
 
     username = lines[0].strip('\n')

@@ -3,9 +3,8 @@
 
 import requests
 
-
 def notify_to_wx(title, result):
-    with open('../AccountInfo/server_key.txt', 'r') as f:
+    with open('/Users/tanwenbo/PycharmProjects/Daily-Check-in/AccountInfo/server_key.txt', 'r') as f:
         key = f.readlines()
     url = "https://sc.ftqq.com/%s.send" % key[0]
     print url
